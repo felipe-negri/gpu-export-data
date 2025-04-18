@@ -5,7 +5,7 @@ app = Flask(__name__)
 nvmlInit()
 gpu = nvmlDeviceGetHandleByIndex(0)
 
-@app.route("/gpu")
+@app.route("/gpu-stats")
 def gpu_metrics():
     util = nvmlDeviceGetUtilizationRates(gpu)
     mem = nvmlDeviceGetMemoryInfo(gpu)
